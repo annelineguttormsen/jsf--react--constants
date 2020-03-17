@@ -1,40 +1,10 @@
 import React from 'react';
+import { calcArea, calcCirc } from "./circles.js";
+import { getAndDisplay } from "./api.js";
+import greet from "./greet.js";
+import { WEBSITE_NAME, DOMAIN_NAME, MY_CONSTANT, USEFUL_NUMBER, ALLOW_COMMENTS, API_URL, PI } from "./constants.js";
 
 export default function App() {
-
-  /* api.js */
-  
-  const apiUrl = "https://amazingpi.com/api/";
-
-  function getAndDisplay(url) {
-    return "content loaded from from " + url;
-  }
-
-  /* greet.js */
-  
-  function greet(name) {
-    return "Hello, " + name;
-  }
-
-  /* circles.js */
-
-  const pi = 3.14159;
-
-  function calcArea(radius) {
-    return pi * (radius * radius);
-  }
-  function calcCirc(radius) {
-    return pi * (radius * 2);
-  }
-
-  /* constants.js */
-
-  const websiteName = "Noroff";
-  const domainName = "www.noroff.no";
-  const myConstant = "MY_CONSTANT";
-  const usefulNumber = 128;
-  const allowComments = true;
-
   /* output - don't move this code into another file */
 
   return (
@@ -44,21 +14,21 @@ export default function App() {
       <h2>api.js</h2>
       <ul>
         <li>
-          {getAndDisplay(apiUrl)}
+          {getAndDisplay(API_URL)}
         </li>
       </ul>
 
       <h2>greet.js</h2>
       <ul>
         <li>
-          {greet(websiteName)}
+          {greet(WEBSITE_NAME)}
         </li>
       </ul>
 
       <h2>circle.js</h2>
       <ul>
         <li>
-          PI is {pi}
+          PI is {PI}
         </li>
         <li>
           Area of a 3cm radius circle is: {calcArea(3)}
@@ -72,19 +42,19 @@ export default function App() {
       <h2>constants.js</h2>
       <ul>
         <li>
-          websiteName: {websiteName}
+          WEBSITE_NAME: {WEBSITE_NAME}
         </li>
         <li>
-          domainName: {domainName}
+          DOMAIN_NAME: {DOMAIN_NAME}
         </li>
         <li>
-          myConstant: {myConstant}
+          MY_CONSTANT: {MY_CONSTANT}
         </li>
         <li>
-          usefulNumber: {usefulNumber}
+          USEFUL_NUMBER: {USEFUL_NUMBER}
         </li>
         <li>
-          allowComments: {allowComments ? "yes" : "no"}
+          ALLOW_COMMENTS: {ALLOW_COMMENTS ? "yes" : "no"}
         </li>
       </ul>
     </div>
